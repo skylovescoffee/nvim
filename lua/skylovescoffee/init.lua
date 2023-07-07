@@ -1,4 +1,4 @@
-print('ello there m8 we in skylovescoffee')
+require("skylovescoffee.packer")
 require("skylovescoffee.keybindings")
 require("skylovescoffee.settings")
 require("skylovescoffee.theme")

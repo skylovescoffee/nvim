@@ -41,5 +41,8 @@ require('packer').startup(function()
 
     -- Add null-ls
     use 'jose-elias-alvarez/null-ls.nvim'
+
+    -- Add ALE
+    use 'dense-analysis/ale'
 end)
 
