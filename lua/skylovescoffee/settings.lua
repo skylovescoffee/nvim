@@ -1,6 +1,9 @@
 vim.g.mapleader = ' '
 vim.wo.number = true  -- Set current line number
 vim.wo.relativenumber = true  -- Set relative line numbers
-vim.bo.expandtab = true   -- Converts tabs to spaces
-vim.bo.tabstop = 2        -- Number of spaces a tab counts for
-vim.bo.shiftwidth = 2     -- Size of an indent
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
