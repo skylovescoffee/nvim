@@ -13,9 +13,9 @@ vim.cmd([[
   augroup end
 ]])
 
--- This line requires the Tokyo Night theme. You can customize it here.
--- require('folke/tokyonight.nvim').setup({})
+
 
 -- This line sets the colorscheme to Tokyo Night.
-vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd[[colorscheme tokyonight-day]]
 

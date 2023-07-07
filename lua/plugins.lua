@@ -1,9 +1,10 @@
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'  -- Keep this line, it's for packer itself.
 
+    -- Add themes
     use 'folke/tokyonight.nvim'
 
-    -- add telescope
+    -- Add telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}
@@ -17,7 +18,7 @@ require('packer').startup(function()
         end,
     }
 
-    -- add completion
+    -- Add completion
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -32,5 +33,13 @@ require('packer').startup(function()
         require('Comment').setup()
     	end
     }
+
+
+    -- Add plenary 
+    use "nvim-lua/plenary.nvim"
+
+
+    -- Add null-ls
+    use 'jose-elias-alvarez/null-ls.nvim'
 end)
 

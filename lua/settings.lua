@@ -1,9 +1,9 @@
 vim.g.mapleader = ' '
 vim.wo.number = true  -- Set current line number
 vim.wo.relativenumber = true  -- Set relative line numbers
+vim.bo.expandtab = true   -- Converts tabs to spaces
 vim.bo.tabstop = 2        -- Number of spaces a tab counts for
 vim.bo.shiftwidth = 2     -- Size of an indent
-vim.bo.expandtab = true   -- Converts tabs to spaces
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -47,7 +47,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- setup TS Server
+-- Setup TS Server
 local nvim_lsp = require('lspconfig')
 
 nvim_lsp.tsserver.setup {
@@ -64,7 +64,7 @@ nvim_lsp.tsserver.setup {
   end,
 }
 
--- setup completion plugin
+-- Setup completion plugin
 local cmp = require'cmp'
 
 cmp.setup({
