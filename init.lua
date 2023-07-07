@@ -1,9 +1,4 @@
-require('plugins')
-
-require('settings')
-
-require('keybindings')
-
+require('skylovescoffee')
 
 -- Source packer everyime plugins is updated
 vim.cmd([[
@@ -15,7 +10,4 @@ vim.cmd([[
 
 
 
--- This line sets the colorscheme to Tokyo Night.
--- vim.cmd[[colorscheme tokyonight-moon]]
-vim.cmd[[colorscheme tokyonight-day]]
 
