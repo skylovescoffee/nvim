@@ -93,6 +93,8 @@ cmp.setup({
   },
 })
 
+require('Comment').setup()
+
 
 
 
