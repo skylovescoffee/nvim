@@ -14,3 +14,6 @@ nvim_lsp.tsserver.setup {
     ts_utils.setup_client(client)
   end,
 }
+
+nvim_lsp.lua_ls.setup {}
+

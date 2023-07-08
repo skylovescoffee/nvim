@@ -51,5 +51,13 @@ return require('packer').startup(function()
     -- Add NeoGit
     use 'NeogitOrg/neogit'
 
+    -- Add Mason for easy LSP server installation
+    use {
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
+
+    use "sindrets/diffview.nvim"
+
 end)
 
