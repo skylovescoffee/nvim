@@ -10,6 +10,10 @@ Neovim is a highly configurable text editor built to enable efficient text editi
 
 As I venture into the world of Neovim, this repository will be updated periodically with the latest tweaks, plugins, and settings I've found useful or interesting. My current focus is exploring the versatility of Neovim and tailoring it to improve my personal workflow.
 
+## Prerequisites
+1. Install [ripgrep](https://github.com/BurntSushi/ripgrep).
+2. (Optional) Prettier `npm i -g prettier`
+   
 ## Getting Started
 
 To use this configuration, follow the steps below:
@@ -28,6 +32,7 @@ To use this configuration, follow the steps below:
    ```
 
 Remember to restart Neovim to apply the changes.
+
 4. Restart Neovim to apply the changes.
 
 ## Config Highlights
