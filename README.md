@@ -32,6 +32,7 @@ To use this configuration, follow the steps below:
    ```
 
 Remember to restart Neovim to apply the changes.
+
 4. Restart Neovim to apply the changes.
 
 ## Config Highlights
