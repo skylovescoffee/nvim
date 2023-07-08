@@ -1,5 +1,4 @@
 require('skylovescoffee')
-
 -- Source packer everyime plugins is updated
 vim.cmd([[
   augroup packer_user_config

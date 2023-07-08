@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  neogit = {
+    loaded = true,
+    path = "/Users/sky/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/NeogitOrg/neogit"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/sky/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 

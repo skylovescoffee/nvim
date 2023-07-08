@@ -8,5 +8,6 @@ vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>Telescope live_grep<CR>', {nore
 
 vim.api.nvim_set_keymap('n', '<leader>c', "ciw", {noremap = true, silent = true})
 
+
 -- vim.api.nvim_set_keymap('n', '<leader>x', "gcc", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('v', '<leader>x', "gcc", {noremap = false, silent = true})
