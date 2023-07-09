@@ -110,6 +110,11 @@ _G.packer_plugins = {
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/sky/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/mason.nvim",

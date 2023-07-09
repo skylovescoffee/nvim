@@ -65,5 +65,8 @@ return require('packer').startup(function()
     -- Add undo tree
     use 'mbbill/undotree'
 
+    -- Shoutout to the PRIMETIME
+    use 'ThePrimeagen/harpoon'
+
 end)
 
