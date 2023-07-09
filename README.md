@@ -15,6 +15,7 @@ As I venture into the world of Neovim, this repository will be updated periodica
 ## Prerequisites
 1. Install [ripgrep](https://github.com/BurntSushi/ripgrep).
 2. (Optional) Prettier `npm i -g prettier`
+3. (Optional) jq `brew install jq` if you want to read tab width from .prettierrc
    
 ## Getting Started
 
