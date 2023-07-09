@@ -10,9 +10,7 @@ Neovim is a highly configurable text editor built to enable efficient text editi
 
 As I venture into the world of Neovim, this repository will be updated periodically with the latest tweaks, plugins, and settings I've found useful or interesting. My current focus is exploring the versatility of Neovim and tailoring it to improve my personal workflow.
 
-## To-do
-1. Improve `gd` aka go-to-definition.
-2. Add auto import in Typescript.
+<!-- ## To-do -->
 
 ## Prerequisites
 1. Install [ripgrep](https://github.com/BurntSushi/ripgrep).
