@@ -7,6 +7,3 @@ vim.cmd([[
   augroup end
 ]])
 
-
-
-
