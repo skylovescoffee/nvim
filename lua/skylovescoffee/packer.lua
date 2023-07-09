@@ -59,5 +59,8 @@ return require('packer').startup(function()
 
     use "sindrets/diffview.nvim"
 
+    -- Add Typescript
+    use 'jose-elias-alvarez/typescript.nvim'
+
 end)
 
