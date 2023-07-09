@@ -21,5 +21,5 @@ neogit.setup {
 vim.keymap.set("n", "<leader>gs", ":Neogit<cr>")
 vim.keymap.set("n", "<leader>gc", ":Neogit commit <cr>")
 vim.keymap.set("n", "<leader>gp", ":Neogit push <cr>")
-vim.keymap.set("n", "<leader>gd", ":Neogit diff <cr>")
+-- vim.keymap.set("n", "<leader>df", ":Neogit diff <cr>")
 
