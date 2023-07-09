@@ -62,5 +62,8 @@ return require('packer').startup(function()
     -- Add Typescript
     use 'jose-elias-alvarez/typescript.nvim'
 
+    -- Add undo tree
+    use 'mbbill/undotree'
+
 end)
 
