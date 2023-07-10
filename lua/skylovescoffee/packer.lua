@@ -68,5 +68,8 @@ return require('packer').startup(function()
     -- Shoutout to the PRIMETIME
     use 'ThePrimeagen/harpoon'
 
+    -- Add auto format for HTML + more in the future
+    use 'vim-autoformat/vim-autoformat'
+
 end)
 

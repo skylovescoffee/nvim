@@ -174,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sky/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-autoformat"] = {
+    loaded = true,
+    path = "/Users/sky/.local/share/nvim/site/pack/packer/start/vim-autoformat",
+    url = "https://github.com/vim-autoformat/vim-autoformat"
   }
 }
 
