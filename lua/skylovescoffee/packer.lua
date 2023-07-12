@@ -29,6 +29,11 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
+    -- Add vsnip for completion
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+
+
     -- Add commenting/uncommenting lines
     use {
         'numToStr/Comment.nvim',
@@ -70,6 +75,7 @@ return require('packer').startup(function()
 
     -- Add auto format for HTML + more in the future
     use 'vim-autoformat/vim-autoformat'
+
 
 end)
 
