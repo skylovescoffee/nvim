@@ -10,7 +10,7 @@ vim.g["formatters_html"] = {"htmlbeautify"}
 
 vim.cmd([[augroup fmt
   autocmd!
-  autocmd BufWritePre *.{html,css} Autoformat
+  autocmd BufWritePre *.{html,css,json} Autoformat
 augroup END]])
 
 
