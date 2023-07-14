@@ -76,6 +76,9 @@ return require('packer').startup(function()
     -- Add auto format for HTML + more in the future
     use 'vim-autoformat/vim-autoformat'
 
+    -- Add auto pairs and tags
+    use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
 
 end)
 
