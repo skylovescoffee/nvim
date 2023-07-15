@@ -20,3 +20,7 @@ function YankBufferToClipboard()
 end
 
 
+-- Easy motion, using "f" key inspired by vim-browser
+vim.api.nvim_set_keymap('n', 'f', ':HopWord<CR>', { noremap = true, silent = true })
+
+

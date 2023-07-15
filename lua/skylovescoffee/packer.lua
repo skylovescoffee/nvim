@@ -21,6 +21,7 @@ return require('packer').startup(function()
         end,
     }
 
+
     -- Add completion
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -79,6 +80,11 @@ return require('packer').startup(function()
     -- Add auto pairs and tags
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
+
+    -- Add easy motion
+    use {'phaazon/hop.nvim', 
+         branch = 'v2' -- optional but heavily recommended
+    }
 
 end)
 
