@@ -26,9 +26,9 @@ cmp.setup({
     { name = 'nvim-lsp-ts-utils' },
   },
 })
-
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
+--
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- cmp.vent:on(
+--   'confirm_done',
+--   cmp_autopairs.on_confirm_done()
+-- )
