@@ -4,7 +4,7 @@ vim.api.nvim_set_keymap('n', '<leader>c', 'ciw', { noremap = true, silent = true
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format)
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
@@ -21,6 +21,6 @@ end
 
 
 -- Easy motion, using "f" key inspired by vim-browser
-vim.api.nvim_set_keymap('n', 'f', ':HopWord<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', ':HopWord<CR>', { noremap = true, silent = true })
 
 
