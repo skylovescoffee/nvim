@@ -86,5 +86,8 @@ return require('packer').startup(function()
          branch = 'v2' -- optional but heavily recommended
     }
 
+    -- Add trouble for diagnostics
+    use 'folke/trouble.nvim'
+
 end)
 
