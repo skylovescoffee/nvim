@@ -17,6 +17,7 @@ As I venture into the world of Neovim, this repository will be updated periodica
 2. (Optional) Prettier `npm i -g prettier`
 3. (Optional) [jq](https://github.com/jqlang/jq) if you want to read tab width from .prettierrc
 4. (Optional) [js-beautify](https://github.com/beautify-web/js-beautify)
+5. (Optional) Tailwind-css `npm install -g @tailwindcss/language-server)`
    
 ## Getting Started
 
