@@ -21,6 +21,6 @@ end
 
 
 -- Easy motion, using "f" key inspired by vim-browser
-vim.api.nvim_set_keymap('n', '<leader>f', ':HopWord<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><leader>', ':HopWord<CR>', { noremap = true, silent = true })
 
 
