@@ -53,3 +53,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- end, opts)
   end,
 })
+
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
