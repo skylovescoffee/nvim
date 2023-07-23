@@ -4,6 +4,7 @@ vim.g.ale_linters = {
     typescript = {'prettier', 'eslint'},
     javascriptreact = {'prettier', 'eslint'},
     typescriptreact = {'prettier', 'eslint'},
+    rust = { 'analyzer' }
 }
 
 vim.g.ale_fixers = {

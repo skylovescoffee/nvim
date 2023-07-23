@@ -23,6 +23,16 @@ require'lspconfig'.lua_ls.setup {
 
 require'lspconfig'.tailwindcss.setup{}
 
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -54,12 +64,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-require'lspconfig'.rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      }
-    }
-  }
-}
+
