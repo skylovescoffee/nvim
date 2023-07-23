@@ -81,6 +81,7 @@ return require('packer').startup(function()
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
 
+    -- MIGHT REMOVE SINCE IT IS BARELY USED ***
     -- Add easy motion
     use {'phaazon/hop.nvim', 
          branch = 'v2' -- optional but heavily recommended
@@ -88,6 +89,9 @@ return require('packer').startup(function()
 
     -- Add trouble for diagnostics
     use 'folke/trouble.nvim'
+
+    -- 
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
 end)
 
