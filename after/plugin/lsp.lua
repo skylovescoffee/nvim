@@ -65,3 +65,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
+-- Lets configure Angular to also work within nx workspaces :)
+local util = require('lspconfig.util')
+local root_dir = util.root_pattern('angular.json', 'project.json', 'workspace.json')
+
+require'lspconfig'.angularls.setup {
+  root_dir = root_dir,  -- Set the root_dir using the defined pattern
+}
+
+
+require'lspconfig'.nxls.setup{}

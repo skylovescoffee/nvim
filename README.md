@@ -18,7 +18,9 @@ As I venture into the world of Neovim, this repository will be updated periodica
 3. (Optional) [jq](https://github.com/jqlang/jq) if you want to read tab width from .prettierrc
 4. (Optional) [js-beautify](https://github.com/beautify-web/js-beautify)
 5. (Optional) Tailwind-css `npm install -g @tailwindcss/language-server)`
-   
+6. (Optional) Angular language server `npm install -g @angular/language-server` If this causes errors, check if the language server version meets the installed angular version.
+7. (Optional) nx workspace language-server `npm i -g nxls`
+
 ## Getting Started
 
 To use this configuration, follow the steps below:
@@ -49,6 +51,9 @@ This configuration currently includes:
 - A curated list of plugins for added functionality and ease of use
 
 Remember, the main aim of this configuration isn't to be the 'best' or 'definitive' but to cater to my specific needs as they evolve over time. Feel free to fork, modify, or take inspiration from it for your personal journey with Neovim.
+
+## To-do
+- Add a command for recently opened files in telescope.
 
 ## Feedback and Contributions
 
