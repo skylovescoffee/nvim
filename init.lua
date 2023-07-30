@@ -22,15 +22,18 @@ local plugins = {
     { 'rose-pine/neovim', name = 'rose-pine',
     	lazy = false,
     	priority = 1000,
-      	config = function()
+      config = function()
 		    vim.cmd.colorscheme 'rose-pine'
     	end,
     },
     -- Add commenting/uncommenting lines
-    {'numToStr/Comment.nvim'},
-
-    -- Add null-ls
-    {'jose-elias-alvarez/null-ls.nvim'},
+    {
+      'numToStr/Comment.nvim',
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+        require('Comment').setup()
+      end
+    },
 
     -- Add ALE
     {'dense-analysis/ale',
@@ -72,11 +75,6 @@ local plugins = {
       end
 
     },
-    -- Add Mason for easy LSP server installation
-    {
-        "williamboman/mason.nvim",
-        build = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    },
 
     -- Add undo tree
     {
@@ -117,13 +115,10 @@ local plugins = {
       dependencies = {'nvim-lua/plenary.nvim'},
     },
 
-
     -- Add auto format for HTML + more in the future
-    require 'skylovescoffee.plugins.autoformat',
     require 'skylovescoffee.plugins.telescope',
     require 'skylovescoffee.plugins.treesitter',
-    require 'skylovescoffee.plugins.typescript',
-    require 'skylovescoffee.plugins.lsp',
+    require 'skylovescoffee.plugins.coc',
 }
 
 
