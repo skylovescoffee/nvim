@@ -95,5 +95,8 @@ return require('packer').startup(function()
 
     use 'nvim-pack/nvim-spectre'
 
+    use "lukas-reineke/indent-blankline.nvim"
+
+
 end)
 
