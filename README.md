@@ -54,6 +54,7 @@ Remember, the main aim of this configuration isn't to be the 'best' or 'definiti
 
 ## To-do
 - Add a command for recently opened files in telescope.
+- Make telescope better. Maybe show directory as a line under?
 
 ## Feedback and Contributions
 
