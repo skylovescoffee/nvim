@@ -1,12 +1,13 @@
 return {
-  'nvim-telescope/telescope.nvim',
+  dir = '~/.config/nvim/lua/skylovescoffee/plugins/telescope.nvim',
+  -- 'nvim-telescope/telescope.nvim',
   dependencies = {'nvim-lua/plenary.nvim'},
 
   config = function()
     require('telescope').setup{
       defaults = {
         file_previewer = custom_previewer,
-        path_display = { "truncate" }, -- truncate, absolute, shorten
+        path_display = { "split" }, -- split, truncate, absolute, shorten
         layout_config = {
           preview_width = 0.6,  -- Adjust as needed
           results_width = 0.4,  -- Adjust as needed

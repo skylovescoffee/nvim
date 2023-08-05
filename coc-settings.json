@@ -1,3 +1,5 @@
 {
-  "Lua.workspace.checkThirdParty": false
+  "Lua.workspace.checkThirdParty": false,
+  "javascript.suggest.autoImports": true, 
+  "typescript.suggest.autoImports": true
 }
