@@ -92,7 +92,7 @@ local plugins = {
         local ui = require("harpoon.ui")
         local map = vim.keymap.set
 
-        map("n", "<leader>a", mark.add_file)
+        map("n", "<leader>af", mark.add_file)
         map("n", "<leader>h", ui.toggle_quick_menu)
 
         map("n", "<leader>1", function() ui.nav_file(1) end)
@@ -114,6 +114,22 @@ local plugins = {
     {'nvim-pack/nvim-spectre',
       dependencies = {'nvim-lua/plenary.nvim'},
     },
+
+    { "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+       vim.opt.termguicolors = true
+       require("indent_blankline").setup {
+          -- space_char_blankline = " ",
+          show_current_context = true,
+          -- show_current_context_start = true,
+       }     
+    end
+  },
+
+    -- vim.opt.list = true
+-- vim.opt.listchars:append "space:⋅"
+-- vim.opt.listchars:append "eol:↴"
+
 
     -- Add auto format for HTML + more in the future
     require 'skylovescoffee.plugins.telescope',
