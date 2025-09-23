@@ -9,6 +9,7 @@
 
 - Tokyonight (colorscheme)
 - Telescope (fuzzy finder)
+- Conform (auto-format on save)
 
 ## Keybindings
 
@@ -18,3 +19,5 @@
 ### Tips
 
 Run `:Lazy sync` or restart Neovim to install new plugins.
+
+To enable format on save, nothing extra is needed. Conform runs automatically on `BufWritePre` for supported filetypes. Ensure the external formatters are installed (e.g., `stylua`, `prettier`, `black`, `shfmt`, `gofmt`).
