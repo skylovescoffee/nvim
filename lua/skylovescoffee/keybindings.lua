@@ -32,3 +32,9 @@ end, { noremap = true, silent = true, desc = 'Telescope: find files' })
 vim.keymap.set('n', '<leader>fg', function()
   require('telescope.builtin').live_grep()
 end, { noremap = true, silent = true, desc = 'Telescope: live grep' })
+
+-- vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = 'Find recent files' })
+
+vim.keymap.set('n', '<leader>fr', function()
+  require('telescope.builtin').oldfiles()
+end, { noremap = true, silent = true, desc = 'Telescope: recent files' })
