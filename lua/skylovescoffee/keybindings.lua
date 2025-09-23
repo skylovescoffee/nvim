@@ -23,3 +23,12 @@ vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
 
 -- Remove search highlighting on escape
 vim.keymap.set("n", "<esc>", "<esc>:noh<CR><esc>")
+
+-- Telescope keybindings
+vim.keymap.set('n', '<leader>ff', function()
+  require('telescope.builtin').find_files()
+end, { noremap = true, silent = true, desc = 'Telescope: find files' })
+
+vim.keymap.set('n', '<leader>fg', function()
+  require('telescope.builtin').live_grep()
+end, { noremap = true, silent = true, desc = 'Telescope: live grep' })
