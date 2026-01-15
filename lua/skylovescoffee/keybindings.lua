@@ -1,12 +1,37 @@
 vim.g.mapleader = " "
+local function map(modes, lhs, rhs, opts)
+  if vim.keymap and vim.keymap.set then
+    vim.keymap.set(modes, lhs, rhs, opts)
+    return
+  end
+
+  local legacy_opts = { noremap = true, silent = false }
+  if opts then
+    if opts.noremap ~= nil then
+      legacy_opts.noremap = opts.noremap
+    end
+    if opts.silent ~= nil then
+      legacy_opts.silent = opts.silent
+    end
+  end
+
+  if type(modes) == "table" then
+    for _, mode in ipairs(modes) do
+      vim.api.nvim_set_keymap(mode, lhs, rhs, legacy_opts)
+    end
+    return
+  end
+
+  vim.api.nvim_set_keymap(modes, lhs, rhs, legacy_opts)
+end
 vim.api.nvim_set_keymap('n', '<leader>e', ':Explore<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>c', 'ciw', { noremap = true, silent = true })
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map({ "n", "v" }, "<leader>y", [["+y]])
 
 -- paste without yanking deleted word
-vim.keymap.set("x", "p", [["_dP]])
+map("x", "p", [["_dP]])
 
 vim.api.nvim_set_keymap('n', '<Leader>yy', ':lua YankBufferToClipboard()<CR>', { noremap = true, silent = true })
 
@@ -19,22 +44,22 @@ end
 vim.api.nvim_set_keymap('n', '<leader><leader>', ':HopWord<CR>', { noremap = true, silent = true })
 
 -- Hover
-vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
 
 -- Remove search highlighting on escape
-vim.keymap.set("n", "<esc>", "<esc>:noh<CR><esc>")
+map("n", "<esc>", "<esc>:noh<CR><esc>")
 
 -- Telescope keybindings
-vim.keymap.set('n', '<leader>ff', function()
+map('n', '<leader>ff', function()
   require('telescope.builtin').find_files()
 end, { noremap = true, silent = true, desc = 'Telescope: find files' })
 
-vim.keymap.set('n', '<leader>fg', function()
+map('n', '<leader>fg', function()
   require('telescope.builtin').live_grep()
 end, { noremap = true, silent = true, desc = 'Telescope: live grep' })
 
 -- vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = 'Find recent files' })
 
-vim.keymap.set('n', '<leader>fr', function()
+map('n', '<leader>fr', function()
   require('telescope.builtin').oldfiles()
 end, { noremap = true, silent = true, desc = 'Telescope: recent files' })
