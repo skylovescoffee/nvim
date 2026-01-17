@@ -18,6 +18,11 @@ return {
             python = { "black" },
             go = { "gofmt" },
         },
+        formatters = {
+            prettier = {
+                timeout_ms = 5000,
+            },
+        },
         format_on_save = function(bufnr)
             -- disable for huge files
             local max_filesize = 2 * 1024 * 1024 -- 2MB
@@ -25,7 +30,7 @@ return {
             if ok and stats and stats.size > max_filesize then
                 return
             end
-            return { lsp_fallback = true, timeout_ms = 1000 }
+            return { lsp_fallback = true, timeout_ms = 5000 }
         end,
     },
 }

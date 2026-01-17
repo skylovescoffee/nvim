@@ -19,15 +19,47 @@ return {
             map("n", "K", vim.lsp.buf.hover, "LSP: hover")
             map("n", "<leader>rn", vim.lsp.buf.rename, "LSP: rename symbol")
             map("n", "<leader>ca", vim.lsp.buf.code_action, "LSP: code action")
+            map("n", "<leader>oi", function()
+                local params = vim.lsp.util.make_range_params()
+                vim.lsp.buf.code_action({
+                    context = {
+                        only = { "source.organizeImports" },
+                        diagnostics = {},
+                    },
+                    range = params.range,
+                })
+            end, "LSP: organize imports")
             map("n", "[d", vim.diagnostic.goto_prev, "LSP: prev diagnostic")
             map("n", "]d", vim.diagnostic.goto_next, "LSP: next diagnostic")
         end
 
-        vim.lsp.config("ts_ls", {
-            on_attach = on_attach,
-        })
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-        vim.lsp.enable("ts_ls")
+        vim.lsp.config('ts_ls', {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                typescript = {
+                    preferences = {
+                        includePackageJsonAutoImports = "on",
+                        importModuleSpecifier = "relative",
+                    },
+                    suggest = {
+                        autoImports = true,
+                    },
+                },
+                javascript = {
+                    preferences = {
+                        includePackageJsonAutoImports = "on",
+                        importModuleSpecifier = "relative",
+                    },
+                    suggest = {
+                        autoImports = true,
+                    },
+                },
+            },
+        })
     end,
 }
 
