@@ -3,6 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
@@ -33,10 +34,10 @@ return {
             map("n", "]d", vim.diagnostic.goto_next, "LSP: next diagnostic")
         end
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-        vim.lsp.config('ts_ls', {
+        vim.lsp.config("ts_ls", {
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -60,6 +61,8 @@ return {
                 },
             },
         })
+
+        vim.lsp.enable("ts_ls")
     end,
 }
 
