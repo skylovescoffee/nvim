@@ -3,6 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
@@ -18,12 +19,49 @@ return {
             map("n", "K", vim.lsp.buf.hover, "LSP: hover")
             map("n", "<leader>rn", vim.lsp.buf.rename, "LSP: rename symbol")
             map("n", "<leader>ca", vim.lsp.buf.code_action, "LSP: code action")
+            map("n", "<leader>oi", function()
+                local params = vim.lsp.util.make_range_params()
+                vim.lsp.buf.code_action({
+                    context = {
+                        only = { "source.organizeImports" },
+                        diagnostics = {},
+                    },
+                    range = params.range,
+                })
+            end, "LSP: organize imports")
             map("n", "[d", vim.diagnostic.goto_prev, "LSP: prev diagnostic")
             map("n", "]d", vim.diagnostic.goto_next, "LSP: next diagnostic")
         end
 
+<<<<<<< HEAD
+=======
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+>>>>>>> fdb44c76148716b2df8d6d6299c38cd4d9b4d4b2
         vim.lsp.config("ts_ls", {
             on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                typescript = {
+                    preferences = {
+                        includePackageJsonAutoImports = "on",
+                        importModuleSpecifier = "relative",
+                    },
+                    suggest = {
+                        autoImports = true,
+                    },
+                },
+                javascript = {
+                    preferences = {
+                        includePackageJsonAutoImports = "on",
+                        importModuleSpecifier = "relative",
+                    },
+                    suggest = {
+                        autoImports = true,
+                    },
+                },
+            },
         })
         vim.lsp.enable("ts_ls")
     end,

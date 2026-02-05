@@ -4,5 +4,6 @@ return {
     require("skylovescoffee.plugins.conform"),
     require("skylovescoffee.plugins.mason"),
     require("skylovescoffee.plugins.mason_lsp"),
+    require("skylovescoffee.plugins.cmp"),
     require("skylovescoffee.plugins.lsp"),
 } 
