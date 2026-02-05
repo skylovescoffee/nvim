@@ -33,12 +33,6 @@ return {
             map("n", "]d", vim.diagnostic.goto_next, "LSP: next diagnostic")
         end
 
-<<<<<<< HEAD
-=======
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-
->>>>>>> fdb44c76148716b2df8d6d6299c38cd4d9b4d4b2
         vim.lsp.config("ts_ls", {
             on_attach = on_attach,
             capabilities = capabilities,
