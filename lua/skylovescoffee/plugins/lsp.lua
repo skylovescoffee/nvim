@@ -6,8 +6,6 @@ return {
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-        local lspconfig = require("lspconfig")
-
         local on_attach = function(_, bufnr)
             local map = function(mode, lhs, rhs, desc)
                 vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true, desc = desc })
@@ -24,9 +22,10 @@ return {
             map("n", "]d", vim.diagnostic.goto_next, "LSP: next diagnostic")
         end
 
-        lspconfig.ts_ls.setup({
+        vim.lsp.config("ts_ls", {
             on_attach = on_attach,
         })
+        vim.lsp.enable("ts_ls")
     end,
 }
 
