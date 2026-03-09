@@ -14,5 +14,7 @@ set.expandtab = true
 
 vim.opt.smartindent = true
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.scrolloff = 8
 
