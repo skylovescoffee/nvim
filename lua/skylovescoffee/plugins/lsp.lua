@@ -91,6 +91,9 @@ return {
             map("n", "gr", vim.lsp.buf.references, "LSP: references")
             map("n", "gi", vim.lsp.buf.implementation, "LSP: implementation")
             map("n", "K", vim.lsp.buf.hover, "LSP: hover")
+            map("n", "<leader>t", function()
+                require("skylovescoffee.lsp_type").show_full_type()
+            end, "LSP: show full type")
             map("n", "<leader>rn", vim.lsp.buf.rename, "LSP: rename symbol")
             map("n", "<leader>ca", vim.lsp.buf.code_action, "LSP: code action")
             map("n", "<leader>oi", function()
@@ -110,6 +113,9 @@ return {
         vim.lsp.config("ts_ls", {
             on_attach = on_attach,
             capabilities = capabilities,
+            init_options = {
+                hostInfo = "neovim",
+            },
             settings = {
                 typescript = {
                     preferences = {
