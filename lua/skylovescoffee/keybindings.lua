@@ -63,3 +63,14 @@ end, { noremap = true, silent = true, desc = 'Telescope: live grep' })
 map('n', '<leader>fr', function()
   require('telescope.builtin').oldfiles()
 end, { noremap = true, silent = true, desc = 'Telescope: recent files' })
+
+
+vim.keymap.set("n", "<leader>d", function()
+  vim.diagnostic.open_float()
+end, { desc = "Diagnostics float" })
+
+vim.keymap.set("n", "<leader>a", function()
+  vim.lsp.buf.code_action()
+end, { desc = "Code actions" })
+
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })

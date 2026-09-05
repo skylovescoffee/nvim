@@ -7,6 +7,8 @@ return {
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
         local on_attach = function(_, bufnr)
             local map = function(mode, lhs, rhs, desc)
                 vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true, desc = desc })
@@ -58,6 +60,12 @@ return {
             },
         })
         vim.lsp.enable("ts_ls")
+
+        vim.lsp.config("rust_analyzer", {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+        vim.lsp.enable("rust_analyzer")
     end,
 }
 
