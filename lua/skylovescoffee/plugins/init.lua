@@ -6,4 +6,6 @@ return {
     require("skylovescoffee.plugins.mason_lsp"),
     require("skylovescoffee.plugins.cmp"),
     require("skylovescoffee.plugins.lsp"),
+    require("skylovescoffee.plugins.dap"),
+    require("skylovescoffee.plugins.image"),
 } 

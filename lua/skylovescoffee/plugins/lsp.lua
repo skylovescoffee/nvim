@@ -9,8 +9,14 @@ return {
     config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+        local function get_lsp_client(method)
+            return vim.lsp.get_clients({ bufnr = 0, method = method })[1]
+        end
+
         local function goto_definition_or_references()
-            local params = vim.lsp.util.make_position_params()
+            local client = get_lsp_client("textDocument/definition")
+            local params = client and vim.lsp.util.make_position_params(0, client.offset_encoding)
+                or vim.lsp.util.make_position_params()
             vim.lsp.buf_request(0, "textDocument/definition", params, function(err, result, ctx)
                 if err then
                     vim.notify("LSP definition request failed: " .. tostring(err), vim.log.levels.ERROR)
@@ -97,7 +103,9 @@ return {
             map("n", "<leader>rn", vim.lsp.buf.rename, "LSP: rename symbol")
             map("n", "<leader>ca", vim.lsp.buf.code_action, "LSP: code action")
             map("n", "<leader>oi", function()
-                local params = vim.lsp.util.make_range_params()
+                local client = get_lsp_client("textDocument/codeAction")
+            local params = client and vim.lsp.util.make_range_params(vim.api.nvim_get_current_win(), client.offset_encoding)
+                or vim.lsp.util.make_range_params()
                 vim.lsp.buf.code_action({
                     context = {
                         only = { "source.organizeImports" },

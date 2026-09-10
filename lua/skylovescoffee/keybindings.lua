@@ -43,9 +43,6 @@ end
 -- Easy motion, using "f" key inspired by vim-browser
 vim.api.nvim_set_keymap('n', '<leader><leader>', ':HopWord<CR>', { noremap = true, silent = true })
 
--- Hover
-map("n", "<leader>d", ":lua vim.lsp.buf.hover()<CR>")
-
 -- Remove search highlighting on escape
 map("n", "<esc>", "<esc>:noh<CR><esc>")
 
@@ -65,7 +62,7 @@ map('n', '<leader>fr', function()
 end, { noremap = true, silent = true, desc = 'Telescope: recent files' })
 
 
-vim.keymap.set("n", "<leader>d", function()
+vim.keymap.set("n", "<leader>dd", function()
   vim.diagnostic.open_float()
 end, { desc = "Diagnostics float" })
 
@@ -74,3 +71,8 @@ vim.keymap.set("n", "<leader>a", function()
 end, { desc = "Code actions" })
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+
+map("n", "<C-h>", "<C-w>h", { desc = "Window left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Window up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Window right" })
