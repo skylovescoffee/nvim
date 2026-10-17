@@ -42,7 +42,10 @@ return {
                 end
 
                 local cursor = vim.api.nvim_win_get_cursor(0)
-                local cursor_line, cursor_col = cursor[1], cursor[2]
+                -- nvim_win_get_cursor returns a 1-based line but a 0-based column.
+                -- The location fields below are converted to 0-based, so normalize
+                -- the line to 0-based too or the on-definition check never matches.
+                local cursor_line, cursor_col = cursor[1] - 1, cursor[2]
                 local current_file = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p")
                 local on_definition = false
                 for _, location in ipairs(deduped) do
